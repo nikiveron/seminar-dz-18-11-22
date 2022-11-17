@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+string f(double &a) {
+	string s;
+	if (a == 0) s = "false";
+	else s = "true";
+	cout << a << endl;
+	return s;
+}
+
+int main()
+{
+	double a;
+	cin >> a;
+	cout << f(a);
+}
