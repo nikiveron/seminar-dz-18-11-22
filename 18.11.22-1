@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double str_triangle(double s) { //сторона треугольника по площади
+	double a;
+	a = sqrt(4 * s / sqrt(3));
+	return a;
+}
+
+double gipotenuza(double a) {
+	double b;
+	b = sqrt(2 * a * a);
+	return b;
+}
+
+
+int main()
+{
+	double s, a, p;
+	//cin >> s;
+	//cout << str_triangle(s) << endl;
+	
+	//cin >> a;
+	//cout << gipotenuza(a) << endl;
+
+	cin >> s;
+	p = 2 * str_triangle(s) + gipotenuza(str_triangle(s));
+	cout << p;
+}
