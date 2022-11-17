@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+double f(double m1, double m2, double r, double G) {
+	return G * m1 * m2 / (r * r);
+}
+
+int main()
+{
+	double m1, m2, m3, r12, r13, r23, G = 6.67408e-11, m[3], min=1000000, mini;
+	cin >> m1 >> m2 >> m3 >> r12 >> r13 >> r23;
+	m[1] = f(m1, m2, r12, G); //f12
+	m[2] = f(m2, m3, r23, G); //f23
+	m[3] = f(m1, m3, r13, G); //f13
+	for (int i = 0; i < sizeof(m); i++) {
+		if (m[i] < min) {
+			mini = i;
+			min = m[i];
+		}
+	}
+	for (int i = 0; i < sizeof(m); i++)
+	{
+		if (m[i] == min) {
+			m[i]=m[i+1];
+		}
+	}
+	cout << m[1] << m[2];
+}
